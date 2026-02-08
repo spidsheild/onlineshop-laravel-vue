@@ -1,0 +1,32 @@
+
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+/* 🎨 کلاس‌های کمکی Tailwind (اختیاری) */
+.input {
+    @apply w-full border rounded px-3 py-2 focus:outline-none focus:ring;
+}
+
+.btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
+}
+
+
+/* 4️⃣ اسکرول نرم (اختیاری ولی باحال 😎)
+در tailwind.config یا CSS: */
+html {
+  scroll-behavior: smooth;
+}
