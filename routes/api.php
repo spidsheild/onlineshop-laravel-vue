@@ -34,16 +34,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('order', [App\Http\Controllers\Api\OrderController::class, 'store']);
 });
 
-// روت‌های محافظت‌شده باید در api.php باشند
+// Роҳҳои муҳофизатшуда бояд дар api.php бошанд
 Route::middleware('auth:sanctum')->group(function () {
 
-    // اطلاعات کاربر لاگین‌شده
+    // Маълумоти корбари воридшуда
     Route::get('/user', [UserController::class, 'me']);
 
-    // ویرایش پروفایل
+    // Таҳрири профил
     Route::put('/user/profile', [UserController::class, 'update']);
 
-    // خروج از حساب
+    // Баромадан аз ҳисоб
     Route::post('/logout', [AuthController::class, 'logout']);
 
 });

@@ -7,10 +7,10 @@ import { useRouter } from 'vue-router'
 const cart = useCartStore3()
 const router = useRouter()
 
-// لیست محصولات
+// Рӯйхати маҳсулот
 const items = computed(() => cart.itemsStore)
 
-// مبلغ کل
+// Маблағи умумӣ
 const totalPrice = computed(() => cart.totalPriceStore)
 
 const payWithPaypal = async () => {
@@ -41,36 +41,36 @@ const payWithPaypal = async () => {
 <template>
         <div class="max-w-4xl mx-auto p-6 border border-gray-700 rounded-lg">
         <div class="text-right text-xl font-bold border-t pt-4  flex flex-col items-center py-10 space-y-4">
-            <h1 class="text-2xl font-bold mb-6">صفحه پرداخت</h1>
+            <h1 class="text-2xl font-bold mb-6">Саҳифаи пардохт</h1>
         </div>
 
         <div v-if="!items.length" class="text-center text-gray-500">
-            محصولی برای پرداخت وجود ندارد
+            Маҳсулоте барои пардохт вуҷуд надорад
         </div>
 
         <div v-else class="space-y-4">
-            <!-- لیست محصولات -->
+            <!-- Рӯйхати маҳсулот -->
             <div v-for="item in items" :key="item.product.id" class="border rounded p-4 flex justify-between">
                 <div>
                     <h2 class="font-semibold">{{ item.product.title }}</h2>
                     <p class="text-sm text-gray-500">
-                        تعداد: {{ item.quantity }}
+                        Теъдод: {{ item.quantity }}
                     </p>
                 </div>
 
                 <div class="font-bold">
-                    {{ (item.product.price * item.quantity).toLocaleString() }} تومان
+                    {{ (item.product.price * item.quantity).toLocaleString() }} $
                 </div>
             </div>
 
-            <!-- مبلغ کل -->
+            <!-- Маблағи умумӣ -->
             <div class="text-right text-xl font-bold border-t pt-4  flex flex-col items-center py-10 space-y-4">
-                مجموع کل: {{ totalPrice.toLocaleString() }} تومان
+                Маҷмӯи кулл: {{ totalPrice.toLocaleString() }} $
             </div>
             <div class="flex flex-col items-center py-10 space-y-4">
 
  <button @click="payWithPaypal" class=" w-64 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700">
-                    پرداخت با PayPal
+                    Пардохт бо PayPal
                 </button>
 <router-link to="/cart" class="w-64 text-center rounded-xl bg-gray-200 px-6 py-3 text-gray-800 font-semibold
            hover:bg-gray-300 transition">

@@ -63,7 +63,7 @@ export const routes = [
             },
             {
                 path: '',
-                redirect: { name: 'login' }, // پیش‌فرض
+                redirect: { name: 'login' }, // Пешфарз
             },
         ],
     },

@@ -1,7 +1,7 @@
 @vite('resources/js/app.js')
 
 
-<!-- Blade اصلی
+<!-- Blade асосӣ
 
 resources/views/app.blade.php -->
 <!DOCTYPE html>

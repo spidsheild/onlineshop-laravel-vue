@@ -1,7 +1,7 @@
 <template>
 <div class="bg-white p-6 rounded shadow ">
      <div class="mb-6 border-b pb-4 max-w-4xl mx-auto p-6 flex flex-col items-center py-10 space-y-4">
-     <h2 class="text-xl font-bold mb-4">کالاهای خریداری شده</h2>
+     <h2 class="text-xl font-bold mb-4">Молҳои харидоришуда</h2>
      </div>
     
 

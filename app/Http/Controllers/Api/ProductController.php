@@ -32,7 +32,7 @@ class ProductController extends Controller
         $products = $query->latest()->paginate(28);
 
         return response()->json([
-            'products' => $products, // شامل data + meta + links
+            'products' => $products, // Шомили data + meta + links
             'categories' => Category::all(),
         ]);
     }

@@ -24,7 +24,7 @@ const fetchCategory = async () => {
         category.value = response.data.category
         products.value = response.data.products
     } catch (err) {
-        error.value = 'دسته‌بندی پیدا نشد'
+        error.value = 'Дастабандӣ пайдо нашуд'
     } finally {
         loading.value = false
     }
@@ -32,7 +32,7 @@ const fetchCategory = async () => {
 
 onMounted(fetchCategory)
 
-// اگر کاربر بین دسته‌ها جابجا شد بدون reload
+// Агар корбар байни дастаҳо ҷобаҷо шуд бидуни reload
 watch(
     () => route.params.slug,
     () => {
@@ -47,7 +47,7 @@ watch(
         <CartDrawer />
         <!-- Loading -->
         <div v-if="loading" class="text-center py-20">
-            در حال بارگذاری...
+            Дар ҳоли боргирӣ...
         </div>
 
         <!-- Error -->
@@ -87,7 +87,7 @@ watch(
 
             <!-- Empty -->
             <div v-else class="text-center text-gray-500 py-20">
-                محصولی در این دسته‌بندی وجود ندارد
+                Маҳсулоте дар ин дастабандӣ вуҷуд надорад
             </div>
         </div>
     </div>

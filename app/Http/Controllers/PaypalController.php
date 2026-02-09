@@ -13,7 +13,7 @@ class PaypalController extends Controller
 {
     public function createPayment(Request $request)
     {
-        // اگر دوست داری ساخت‌یافته‌تر (حرفه‌ای‌تر) باشه 👌
+        // Агар дӯст дорӣ сохтёфтатар (ҳирфаитар) бошад 👌
         session([
             'checkout' => [
                 'user_id' => auth()->id(),
@@ -77,8 +77,8 @@ class PaypalController extends Controller
 
 
 
-    // 🛠 اصلاح نهایی متد success (نسخه امن)
-// 🔥 نسخه اصلاح‌شده
+    // 🛠 Ислоҳи ниҳоии методи success (нусхаи амн)
+// 🔥 Нусхаи ислоҳшуда
     public function success(Request $request)
     {
         try {
@@ -121,12 +121,12 @@ class PaypalController extends Controller
 
             foreach ($checkout['items'] as $item) {
 
-                // 1️⃣ گرفتن محصول
+                // 1️⃣ Гирифтани маҳсулот
                 $product = Product::findOrFail($item['product_id']);
 
-                // 2️⃣ بررسی موجودی
+                // 2️⃣ Баррасии мавҷудӣ
                 if ($product->stock < $item['quantity']) {
-                    throw new \Exception('موجودی کالا کافی نیست');
+                    throw new \Exception('Мавҷудии мол кофӣ нест');
                 }
 
                 OrderItem::create([
@@ -137,7 +137,7 @@ class PaypalController extends Controller
                     'quantity' => $item['quantity'],
                 ]);
 
-                // 4️⃣ کم کردن موجودی
+                // 4️⃣ Кам кардани мавҷудӣ
                 $product->decrement('stock', $item['quantity']);
 
             }

@@ -10,7 +10,7 @@
 import CartItem from '@/components/CartItem.vue'
 import { useFavoriteStore } from '@/stores/favorite'
 
-// هیچ چیزی لازم نیست
+// Ҳеҷ чиз лозим нест
 
 import { onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth'

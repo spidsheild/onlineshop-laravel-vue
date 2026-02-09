@@ -14,7 +14,7 @@ class PurchaseController extends Controller
         $orders = Order::where('user_id', auth()->id())
             ->with('items:id,order_id,title,price,quantity')
             ->orderByDesc('created_at')
-            ->paginate(5); // هر صفحه 5 خرید
+            ->paginate(3); // Ҳар саҳифа 5 харид
 
         return response()->json($orders);
     }

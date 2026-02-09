@@ -12,7 +12,7 @@ onMounted(() => {
 })
 
 watch(selectedCategory, (val) => {
-    productStore.fetchProducts(val, 1) // با تغییر دسته‌بندی برگرد صفحه 1
+    productStore.fetchProducts(val, 1) // Бо тағйири дастабандӣ баргард ба саҳифаи 1
 })
 
 const changePage = (page) => {
@@ -36,7 +36,7 @@ const changePage = (page) => {
 
         <div class="mb-6 flex justify-center">
             <select v-model="selectedCategory" class="border rounded-lg px-4 py-2">
-                <option :value="null">همه دسته‌بندی‌ها</option>
+                <option :value="null">Ҳамаи дастабандиҳо</option>
                 <option
                     v-for="cat in productStore.categories"
                     :key="cat.id"
@@ -49,7 +49,7 @@ const changePage = (page) => {
 
         <!-- Products -->
         <div v-if="productStore.loading" class="text-center">
-            در حال بارگذاری...
+            Дар ҳоли боргирӣ...
             <div class="flex justify-center items-center py-20">
                 <div class="w-10 h-10 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
             </div>
@@ -76,7 +76,7 @@ const changePage = (page) => {
                 :disabled="productStore.currentPage === 1"
                 @click="changePage(productStore.currentPage - 1)"
             >
-                قبلی
+                Қаблӣ
             </button>
 
             <button
@@ -96,7 +96,7 @@ const changePage = (page) => {
                 :disabled="productStore.currentPage === productStore.lastPage"
                 @click="changePage(productStore.currentPage + 1)"
             >
-                بعدی
+                Баъдӣ
             </button>
         </div>
     </div>

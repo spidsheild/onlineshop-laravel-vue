@@ -4,7 +4,7 @@ import api from '@/apiClient'
 import router from '@/router'
 
 
-// ✅ نسخه نهایی Auth Store (سازگار با Guard حرفه‌ای)
+// ✅ Нусхаи ниҳоии Auth Store (созгор бо Guard ҳирфаӣ)
 export const useAuthStore = defineStore(
   'auth',
   () => {
@@ -14,12 +14,12 @@ export const useAuthStore = defineStore(
     const errors = ref(null)
 
     /**
-     * ✅ فقط یک منبع حقیقت
+     * ✅ Танҳо манбаи ҳақиқат
      */
     const isAuthenticated = computed(() => !!token.value)
 
     /**
-     * 🔄 گرفتن اطلاعات کاربر
+     * 🔄 Гирифтани маълумоти корбар
      */
     const fetchUser = async () => {
       try {

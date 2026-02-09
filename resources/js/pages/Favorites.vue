@@ -17,7 +17,7 @@ onMounted(() => {
          <CartDrawer />
         <div class="flex flex-col items-center py-10 space-y-4">
             <h2 class="w-64 text-center rounded-xl bg-gray-200 px-6 py-3 text-gray-800 font-semibold
-           hover:bg-gray-300 transition">ЛИСТИ ПИСАНДИДАҲО</h2>
+           hover:bg-gray-300 transition"> Рӯйхати дӯстдоштаҳо </h2>
         </div>
 
         <div class="grid grid-cols-4 gap-4">

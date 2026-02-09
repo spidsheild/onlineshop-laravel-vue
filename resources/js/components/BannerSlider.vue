@@ -13,41 +13,19 @@
                         <h2 class="text-3xl font-bold mb-3">
                             {{ slide.title }}
                         </h2>
-                        <!-- <p class="mb-4 text-sm opacity-90">
-                            {{ slide.description }}
-                        </p> -->
-                        <div class="flex items-center gap-2">
-
-                            <!-- <RouterLink :to="slide.link"
-                                class="bg-primary-500 hover:bg-primary-600 transition px-5 py-2 rounded-xl">
-                                مشاهده محصول
-                            </RouterLink> -->
-
-                            <!-- <RouterLink :to="{ name: 'product.show', params: { id: slide.id } }"
-                                class="bg-primary-400 hover:bg-primary-700 transition px-25 py-2 rounded-xl">
-                                مشاهده محصول
-                            </RouterLink>
-                            <span class="text-xl font-semibold">
-                                {{ slide.price }} تومان
-                            </span> -->
-                        </div>
-
+                        
                         <div class="flex flex-col items-start gap-3 px-45">
 
                             <span class="text-xl font-semibold px-5">
-                                {{ slide.price }} تومان
+                                {{ slide.price }} $
                             </span>
-                            <!-- <RouterLink :to="{ name: 'product.show', params: { id: slide.id } }" class="border border-primary-500 bg-primary-100 text-primary-700
-               hover:bg-primary-200 transition px-6 py-2 rounded-xl w-fit">
-                                مشاهده محصول
-                            </RouterLink> -->
 
                             <RouterLink :to="{ name: 'product.show', params: { id: slide.id } }" class="border border-primary-500 bg-primary-100 text-primary-700
                hover:bg-primary-500 hover:text-white
                hover:shadow-md hover:-translate-y-0.5
                transition-all duration-300
                px-6 py-2 rounded-xl w-fit">
-                                مشاهده محصول
+                                Мушоҳидаи маҳсулот
                             </RouterLink>
                         </div>
 

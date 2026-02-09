@@ -7,12 +7,12 @@ const cart = useCartStore3()
   <div class="max-w-4xl mx-auto p-6">
     <div class="flex flex-col items-center py-10 space-y-4">
       <h2 class="w-64 text-center rounded-xl bg-gray-200 px-6 py-3 text-gray-800 font-semibold
-           hover:bg-gray-300 transition"> سبد خرید </h2>
+           hover:bg-gray-300 transition"> Сабади харид </h2>
     </div>
 
     
     <div v-if="!cart.itemsStore.length" class="flex flex-col items-center py-10 space-y-4">
-      سبد خرید خالی است
+      Сабади харид холӣ аст
     </div>
 
     <div v-else class="space-y-4">
@@ -32,7 +32,7 @@ const cart = useCartStore3()
       </div>
 
       <div class="text-right font-bold text-lg  flex flex-col items-center py-10 space-y-4">
-        مجموع نهایی: {{ cart.totalPriceStore.toLocaleString() }} تومان
+        Маҷмӯи ниҳоӣ: {{ cart.totalPriceStore.toLocaleString() }} $
 
 
       </div>

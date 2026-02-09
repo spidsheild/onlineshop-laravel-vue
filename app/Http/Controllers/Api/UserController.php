@@ -9,13 +9,13 @@ class UserController extends Controller
 {
     //
 
-    // اطلاعات کاربر فعلی
+    // Маълумоти корбари ҷорӣ
     public function me(Request $request)
     {
         return response()->json($request->user());
     }
 
-    // ویرایش پروفایل
+    // Таҳрири профил
     public function update(Request $request)
     {
         $user = $request->user();

@@ -63,8 +63,6 @@ watch(
     },
     { immediate: true }
 )
-// ⛔ و onMounted رو حذف کن
-// این روش کاملاً استاندارد Vue Router ـه.
 
 
 const submitComment = async () => {
@@ -78,23 +76,23 @@ const submitComment = async () => {
 
 <template>
     <div>
-        <!-- لودینگ -->
+        <!-- Боргирӣ -->
         <div v-if="store.loading" class="text-center py-20">
-            در حال بارگذاری...
+            Дар ҳоли боргирӣ...
             <div class="flex justify-center items-center py-20">
                 <div class="w-10 h-10 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
             </div>
 
         </div>
         <div v-if="store.product" class="max-w-6xl mx-auto p-6">
-            <!-- بالا -->
+            <!-- Боло -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- عکس -->
+                <!-- Акс -->
                 <div>
                     <img :src="`/storage/${store.product?.image}`" class="w-full h-48 object-cover rounded-lg" />
                 </div>
 
-                <!-- مشخصات -->
+                <!-- Мушаххасот -->
                 <div class="space-y-4">
                     <h1 class="text-2xl font-bold">
                         {{ store.product?.title }}
@@ -105,7 +103,7 @@ const submitComment = async () => {
                     </p>
 
                     <p class="text-xl font-semibold text-green-600">
-                        {{ store.product.price }} تومان
+                        {{ store.product.price }} сомонӣ
                     </p>
 
                     <div class="flex items-center gap-3 mt-4">
@@ -125,19 +123,19 @@ const submitComment = async () => {
                 </div>
             </div>
 
-            <!-- توضیحات -->
+            <!-- Тавзеҳот -->
             <div class="mt-12">
-                <h2 class="text-xl font-bold mb-2">توضیحات محصول</h2>
+                <h2 class="text-xl font-bold mb-2">Тавзеҳоти маҳсулот</h2>
                 <p class="text-gray-700 leading-7">
                     {{ store.product?.description }}
                 </p>
             </div>
 
-            <!-- نظرات -->
+            <!-- Назарҳо -->
             <div class="mt-12">
-                <h2 class="text-xl font-bold mb-4">نظرات کاربران</h2>
+                <h2 class="text-xl font-bold mb-4">Назарҳои корбарон</h2>
 
-                <!-- لیست -->
+                <!-- Рӯйхат -->
                 <div v-if="store.comments && store.comments?.length">
                     <div v-for="comment in store.comments" :key="comment.id" class="border rounded p-4 mb-3">
                         <p class="font-semibold">{{ comment.name }}</p>
@@ -145,12 +143,12 @@ const submitComment = async () => {
                     </div>
                 </div>
 
-                <!-- فرم -->
+                <!-- Форма -->
                 <form @submit.prevent="submitComment" class="mt-6 space-y-3">
-                    <input v-model="commentForm.name" placeholder="نام" class="w-full border rounded p-2" />
-                    <textarea v-model="commentForm.body" placeholder="نظر شما" class="w-full border rounded p-2" />
+                    <input v-model="commentForm.name" placeholder="Ном" class="w-full border rounded p-2" />
+                    <textarea v-model="commentForm.body" placeholder="Назари шумо" class="w-full border rounded p-2" />
                     <button class="bg-green-600 text-white px-4 py-2 rounded">
-                        ارسال نظر
+                        Ирсоли назар
                     </button>
                 </form>
             </div>

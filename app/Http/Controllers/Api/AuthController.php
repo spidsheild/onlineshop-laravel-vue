@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // ثبت نام
+    // Сабти ном
     public function register(Request $request)
     {
         $validated = $request->validate([
@@ -34,7 +34,7 @@ class AuthController extends Controller
         ], 201);
     }
 
-    // لاگین
+    // Воридшавӣ
     public function login(Request $request)
     {
         $request->validate([
@@ -46,7 +46,7 @@ class AuthController extends Controller
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
-                'email' => ['ایمیل یا رمز عبور اشتباه است'],
+                'email' => ['Почтаи электронӣ ё рамзи убур хато аст'],
             ]);
         }
 
@@ -58,13 +58,13 @@ class AuthController extends Controller
         ]);
     }
 
-    // خروج
+    // Баромадан
     public function logout(Request $request)
     {
-        // حذف فقط توکن فعلی
+        // Ҳазфи танҳо токени ҷорӣ
         $request->user()->currentAccessToken()->delete();
 
-        // 📌 اگر بخوای خروج از همه دستگاه‌ها:
+        // 📌 Агар хоҳӣ баромадан аз ҳамаи дастгоҳҳо:
         // $request->user()->tokens()->delete();
 
         return response()->json([

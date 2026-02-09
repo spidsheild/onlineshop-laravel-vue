@@ -20,7 +20,7 @@ router.beforeEach(async (to) => {
   const guestOnly = to.matched.some(r => r.meta.guest)
   const isLoggedIn = auth.isAuthenticated
 
-  // 🔒 فقط routeهای محافظت‌شده
+  // 🔒 Танҳо route-ҳои муҳофизатшуда
   if (requiresAuth && !isLoggedIn) {
     return {
       name: 'login',
@@ -28,12 +28,12 @@ router.beforeEach(async (to) => {
     }
   }
 
-  // 🚫 فقط مهمان
+  // 🚫 Танҳо меҳмон
   if (guestOnly && isLoggedIn) {
     return { name: 'dashboard' }
   }
 
-  // 🔍 فقط برای route محافظت‌شده
+  // 🔍 Танҳо барои route муҳофизатшуда
   if (requiresAuth && isLoggedIn && !auth.user) {
     try {
       await auth.fetchUser()

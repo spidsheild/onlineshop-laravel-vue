@@ -17,9 +17,9 @@ Route::get('/paypal/success', [PaypalController::class, 'success']);
 Route::get('/paypal/cancel', [PaypalController::class, 'cancel']);
 
 
-// تمام آدرس‌ها (/ ، /shop ، /product/1 و ...)
+// Ҳамаи суроғаҳо (/ , /shop , /product/1 ва ...)
 
-// همگی را به یک view واحد می‌فرستد
+// Ҳамаро ба як view воҳид мефиристад
 
 Route::get('/{any}', function () {
     return view('app');
@@ -29,4 +29,3 @@ Route::get('/{any}', function () {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login',    [AuthController::class, 'login']);
 Route::post('/logout',   [AuthController::class, 'logout']);
-

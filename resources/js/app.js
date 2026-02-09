@@ -1,6 +1,6 @@
 import './bootstrap';
 
-// 2️⃣ app.js (Bootstrap اصلی Vue)
+// 2️⃣ app.js (Bootstrap асосии Vue)
 
 // resources/js/app.js
 

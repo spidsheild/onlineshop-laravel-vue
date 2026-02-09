@@ -1,20 +1,20 @@
-<!-- 1️⃣ ویرایش اطلاعات کاربر – ProfileView.vue -->
+<!-- 1️⃣ Таҳрири маълумоти корбар – ProfileView.vue -->
 <template>
   <div class="max-w-xl bg-white p-6 rounded shadow">
-    <h2 class="text-xl font-bold mb-4">ویرایش اطلاعات کاربر</h2>
+    <h2 class="text-xl font-bold mb-4">Таҳрири маълумоти корбар</h2>
 
     <form @submit.prevent="updateProfile" class="space-y-4">
       <div>
-        <label class="block mb-1">نام</label>
+        <label class="block mb-1">Ном</label>
         <input v-model="form.name" class="input" />
       </div>
 
       <div>
-        <label class="block mb-1">ایمیل</label>
+        <label class="block mb-1">Почтаи электронӣ</label>
         <input v-model="form.email" class="input" />
       </div>
 
-      <button class="btn-primary">ذخیره تغییرات</button>
+      <button class="btn-primary">Захираи тағйирот</button>
     </form>
   </div>
 </template>
@@ -35,6 +35,6 @@ onMounted(async () => {
 
 const updateProfile = async () => {
   await axios.put('/user/profile', form)
-  alert('اطلاعات با موفقیت بروزرسانی شد')
+  alert('Маълумот бо муваффақият навсозӣ шуд')
 }
 </script>

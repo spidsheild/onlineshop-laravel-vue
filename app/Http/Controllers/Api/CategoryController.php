@@ -14,13 +14,13 @@ class CategoryController extends Controller
     {
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Pagination واقعی
+        // Pagination воқеӣ
         $products = $category->products()
             ->latest()
-            ->paginate(20); // هر صفحه 8 محصول
+            ->paginate(20); // Ҳар саҳифа 8 маҳсулот
 
-        // والدین دسته‌بندی
-        $breadcrumb = $category->parents()->push($category); // شامل خود category هم می‌شود
+        // Волидайни дастабандӣ
+        $breadcrumb = $category->parents()->push($category); // Шомили худи category ҳам мешавад
 
         return response()->json([
             'category' => [

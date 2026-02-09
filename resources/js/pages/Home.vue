@@ -8,7 +8,7 @@
 
     <section class="container mx-auto py-16 min-h-screen" id="sale">
       <h2 class="text-2xl font-bold mb-8">
-        محصولات ویژه
+        Маҳсулоти вижа
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <ProductCard v-for="product in topProducts" :key="product.id" :product="product" />
@@ -17,7 +17,7 @@
         <router-link to="/products" custom v-slot="{ navigate, href }" class="w-64 text-center rounded-xl bg-blue-600 px-6 py-3 text-white font-semibold
            hover:bg-blue-700 transition duration-300 shadow-md">
           <a :href="href" target="_blank" @click="navigate">
-            مشاهده همه محصولات
+            Мушоҳидаи ҳамаи маҳсулот
           </a>
 
         </router-link>
@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-// در این صفحه فعلاً نیازی به logic نیست
+// Дар ин саҳифа ҳоло ниёзе ба logic нест
 import { ref, computed, watch, onMounted, onUnmounted, onBeforeUnmount } from 'vue'
 import { useProductStore } from '@/stores/product.store'
 import ProductCard from '@/components/product/ProductCard.vue'
@@ -61,13 +61,13 @@ onMounted(() => {
 const products = ref([])
 
 
-// وقتی productStore.products تغییر کرد، products هم آپدیت شود
+// Вақте productStore.products тағйир ёфт, products ҳам навсозӣ шавад
 watch(
   () => productStore.products,
   (newProducts) => {
     products.value = newProducts;
   },
-  { immediate: true } // همین الان هم مقدار اولیه را تنظیم کن
+  { immediate: true } // Ҳамин ҳоло ҳам миқдори аввалияро танзим кун
 )
 
 const bannerProducts = computed(() => {
@@ -91,7 +91,7 @@ const categories = computed(() => {
 })
 
 
-// فقط آیتم‌های scroll
+// Танҳо айтемҳои scroll
 const scrollItems = menu.filter(item => item.type === 'scroll')
 
 
@@ -102,7 +102,7 @@ let observer
 onMounted(() => {
   const elements = scrollItems
     .map(item => document.querySelector(item.target))
-    .filter(el => el !== null) // فقط اونایی که تو صفحه هستن
+    .filter(el => el !== null) // Танҳо онҳое ки дар саҳифа ҳастанд
 
   observer = new IntersectionObserver(
     (entries) => {
