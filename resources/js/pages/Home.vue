@@ -1,22 +1,22 @@
 <template>
   <Header></Header>
-  <div class="home">
+  <div class="home mt-20 text-center">
     <CartDrawer />
     <div>
       <BannerSlider v-if="bannerProducts.length" :slides="bannerProducts" />
     </div>
 
-    <section class="container mx-auto py-16 min-h-screen" id="sale">
-      <h2 class="text-2xl font-bold mb-8">
+    <section class="container mx-auto py-12 md:py-16 px-4" id="sale">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">
         Маҳсулоти вижа
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <ProductCard v-for="product in topProducts" :key="product.id" :product="product" />
       </div>
       <div class="flex justify-center mt-10">
-        <router-link to="/products" custom v-slot="{ navigate, href }" class="w-64 text-center rounded-xl bg-blue-600 px-6 py-3 text-white font-semibold
+        <router-link to="/products" custom v-slot="{ navigate, href }" class="w-full max-w-xs sm:w-auto text-center rounded-xl bg-blue-600 px-8 py-3 text-white font-semibold
            hover:bg-blue-700 transition duration-300 shadow-md">
-          <a :href="href" target="_blank" @click="navigate">
+          <a :href="href" @click="navigate">
             Мушоҳидаи ҳамаи маҳсулот
           </a>
 
@@ -24,9 +24,9 @@
       </div>
     </section>
     <!-- Category Carousel -->
-    <section class="mb-10 min-h-screen" id="categories">
-      <div class="flex flex-col items-center py-10 space-y-4">
-        <h2 class="w-64 text-center rounded-xl bg-gray-200 px-6 py-3 text-gray-800 font-semibold
+    <section class="py-12 md:py-16" id="categories">
+      <div class="flex flex-col items-center mb-8 space-y-4">
+        <h2 class="w-full max-w-xs sm:w-auto text-center rounded-xl bg-gray-200 px-8 py-3 text-gray-800 font-semibold
            hover:bg-gray-300 transition">ДАСТАБАНДИҲО</h2>
       </div>
       <CategoryCarousel :categories="categories" :interval-time="5000" />
@@ -123,21 +123,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.home {
-  text-align: center;
-  margin-top: 80px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #3490dc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
 section {
   scroll-margin-top: 120px;
 }

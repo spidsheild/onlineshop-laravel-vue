@@ -18,10 +18,10 @@ if (status.value === 'success') {
 
 
 <template>
-  <div class="max-w-xl mx-auto p-10 text-center">
+  <div class="max-w-xl mx-auto px-4 py-8 sm:px-6 sm:py-12 text-center">
     <!-- Муваффақ -->
     <div v-if="status === 'success'">
-      <h1 class="text-3xl font-bold text-green-600 mb-4">
+      <h1 class="text-2xl sm:text-3xl font-bold text-green-600 mb-4">
         Пардохт бо муваффақият иҷро шуд ✅
       </h1>
       <p class="text-gray-600 mb-6">
@@ -31,7 +31,7 @@ if (status.value === 'success') {
 
     <!-- Хато -->
     <div v-else>
-      <h1 class="text-3xl font-bold text-red-600 mb-4">
+      <h1 class="text-2xl sm:text-3xl font-bold text-red-600 mb-4">
         Пардохти номуваффақ ❌
       </h1>
 
@@ -45,17 +45,17 @@ if (status.value === 'success') {
     </div>
 
     <div v-if="status === 'cancel'">
-  <h1 class="text-3xl font-bold text-yellow-600 mb-4">
-    Пардохт лағв шуд ⚠️
-  </h1>
-  <p class="text-gray-600">
-    Пардохт аз ҷониби шумо лағв шуд ва маблағе ситонида нашудааст.
-  </p>
-</div>
+      <h1 class="text-2xl sm:text-3xl font-bold text-yellow-600 mb-4">
+        Пардохт лағв шуд ⚠️
+      </h1>
+      <p class="text-gray-600">
+        Пардохт аз ҷониби шумо лағв шуд ва маблағе ситонида нашудааст.
+      </p>
+    </div>
 
     <button
       @click="router.push('/')"
-      class="mt-6 px-6 py-2 bg-gray-800 text-white rounded"
+      class="mt-8 px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
     >
       Бозгашт ба мағоза
     </button>

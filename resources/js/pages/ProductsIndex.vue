@@ -29,13 +29,13 @@ const changePage = (page) => {
 
         <!-- Filter -->
         <div class="flex flex-col items-center py-10 space-y-4">
-            <h2 class="w-64 text-center rounded-xl bg-gray-200 px-6 py-3 text-gray-800 font-semibold">
+            <h2 class="w-full max-w-xs text-center rounded-xl bg-gray-200 px-6 py-3 text-gray-800 font-semibold">
                 ЛИСТИ ДАСТАБАНДИҲО
             </h2>
         </div>
 
-        <div class="mb-6 flex justify-center">
-            <select v-model="selectedCategory" class="border rounded-lg px-4 py-2">
+        <div class="mb-8 flex justify-center">
+            <select v-model="selectedCategory" class="border rounded-lg px-4 py-2 w-full max-w-xs">
                 <option :value="null">Ҳамаи дастабандиҳо</option>
                 <option
                     v-for="cat in productStore.categories"
@@ -48,9 +48,9 @@ const changePage = (page) => {
         </div>
 
         <!-- Products -->
-        <div v-if="productStore.loading" class="text-center">
+        <div v-if="productStore.loading" class="text-center py-20">
             Дар ҳоли боргирӣ...
-            <div class="flex justify-center items-center py-20">
+            <div class="flex justify-center items-center pt-4">
                 <div class="w-10 h-10 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
             </div>
         </div>
@@ -69,10 +69,10 @@ const changePage = (page) => {
         <!-- Pagination -->
         <div
             v-if="productStore.lastPage > 1"
-            class="flex justify-center items-center gap-2 mt-10"
+            class="flex justify-center items-center flex-wrap gap-3 mt-10"
         >
             <button
-                class="px-4 py-2 border rounded-lg"
+                class="px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors"
                 :disabled="productStore.currentPage === 1"
                 @click="changePage(productStore.currentPage - 1)"
             >
@@ -83,16 +83,16 @@ const changePage = (page) => {
                 v-for="page in productStore.lastPage"
                 :key="page"
                 @click="changePage(page)"
-                class="px-4 py-2 rounded-lg border"
+                class="px-4 py-2 rounded-lg border min-w-[44px] text-center hover:bg-gray-100 transition-colors"
                 :class="page === productStore.currentPage
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-blue-600 text-white hover:bg-blue-700'
                     : 'bg-white'"
             >
                 {{ page }}
             </button>
 
             <button
-                class="px-4 py-2 border rounded-lg"
+                class="px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors"
                 :disabled="productStore.currentPage === productStore.lastPage"
                 @click="changePage(productStore.currentPage + 1)"
             >

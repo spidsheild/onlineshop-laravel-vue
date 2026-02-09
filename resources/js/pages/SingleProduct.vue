@@ -84,12 +84,12 @@ const submitComment = async () => {
             </div>
 
         </div>
-        <div v-if="store.product" class="max-w-6xl mx-auto p-6">
+        <div v-if="store.product" class="max-w-6xl mx-auto p-4 sm:p-6">
             <!-- Боло -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 <!-- Акс -->
                 <div>
-                    <img :src="`/storage/${store.product?.image}`" class="w-full h-48 object-cover rounded-lg" />
+                    <img :src="`/storage/${store.product?.image}`" class="w-full h-64 sm:h-96 object-cover rounded-lg" />
                 </div>
 
                 <!-- Мушаххасот -->
